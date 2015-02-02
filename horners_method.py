@@ -17,7 +17,7 @@ def horner(x0, *a):
     y = a[0]
     z = a[0]
 
-    for j in range(1, n):
+    for j in range(1, n - 1):
         y = x0 * y + a[j]
         z = x0 * z + y
 
@@ -27,4 +27,4 @@ def horner(x0, *a):
     print('P\'(x0) =', z)
     
 if __name__ == "__main__":
-    horner(-2, 2, 0, 0, 0)
+    horner(-2, 2, 0, -3, 3, -4)
