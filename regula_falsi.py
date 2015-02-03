@@ -19,7 +19,7 @@ def regula_falsi(f, p0, p1, tol=0, n0=1000):
     q1 = f(p1)
     while i <= n0:
         p = p1 - (q1*(p1 - p0))/(q1 - q0)
-        print("n", i - 2, "pn", p0)
+        print("n", i - 2, "pn", p)
         if abs(p - p1) < tol:
             print("The approximate solution is", p)
             return
@@ -35,6 +35,6 @@ def regula_falsi(f, p0, p1, tol=0, n0=1000):
     print('The method failed after N0 iteration, N0 = ', n0)
     
 if __name__ == "__main__":
-    f = lambda x: cos(x) - x
+    f = lambda x: x * (2.71828)**x - 2
 
-    regula_falsi(f, 0.5, pi/4, tol=1*10**-8, n0=20)
+    regula_falsi(f, 0.5, 1, tol=1*10**-8, n0=20)

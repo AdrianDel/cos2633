@@ -36,7 +36,6 @@ def muller(f, p0, p1, p2, tol=0, n0=1000):
         p = p2 + h
 
         print(p)
-
         if abs(h) < tol:
             print(p)
             return
@@ -56,6 +55,6 @@ def muller(f, p0, p1, p2, tol=0, n0=1000):
     print('The method failed after N0 iteration, N0 = ', n0)
     
 if __name__ == "__main__":
-    f = lambda x: x**4 - 3*x**3 + x**2 + x + 1
+    f = lambda x: x**4 - 2*x**3 - 5*x**2 + 12*x -5
 
-    muller(f, 0.5, -0.5, 0, tol=1*10**-8, n0=20)
+    muller(f, 1.5, 2, 1, tol=1*10**-8, n0=20)
